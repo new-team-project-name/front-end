@@ -12,8 +12,96 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>GA SEI 04</h1>
 
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+        Sign Up!
+      </button>
+      <div class="before-auth sign-up-container">
+      <div id="credentials" class="col-sm-8 col-md-6 col-lg-4 text-center controls pt-2">
+          <form id="sign-up-modal">
+            <h2>sign up</h2>
+            <div class="sign-up-alert"></div>
+            <input type="email" autocomplete="off" class="form-control mb-1" name="credentials[email]" placeholder="email (fake please)">
+            <input type="password" autocomplete="off" class="form-control mb-1" name="credentials[password]" placeholder="password">
+            <input type="password" autocomplete="off" class="form-control mb-1" name="credentials[password_confirmation]" placeholder="confirm password">
+            <button type="submit" class="btn btn-info btn-block">Sign Up!</button>
+          </form>
+            <p>
+              <small>
+                <h2>already signed up?</h2>
+                <button type="button" class="btn btn-block btn-info" data-toggle="modal" data-target="#sign-in-modal">
+                  sign in
+                </button>
+              </small>
+            </p>
+          </div>
+        </div>
+
+        <!-- Button Trigger Modal -->
+      <div class="before-auth">
+        <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal-label" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="sign-in-modal-label">Sign In!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="sign-in" class="border">
+                  <div class="sign-in-alert"></div>
+                  <input class="form-control mb-2" autocomplete="on" type="text" name="credentials[email]" placeholder="Email">
+                  <input class="form-control mb-2" autocomplete="on" type="password" name="credentials[password]" placeholder="Password">
+                  <input class="btn btn-info" type="submit"  value="Sign in!">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle after-auth new-hangout-container" type="button" id="new-hangout" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Add an Event!
+              </button>
+              <div class="dropdown-menu p-4" aria-labelledby="new event">
+                <form id="new-event">
+                  <div class="add-event-alert"></div>
+                  <input type="text" autocomplete="off" class="add form-control mb-1" name="title" placeholder="Event Title" required>
+                  <input type="text" autocomplete="off" class="add form-control mb-1" name="location" placeholder="Location" required>
+                  <input type="text" autocomplete="off" class="add form-control mb-1" name="description" placeholder="Description" required>
+                  <input type="date" autocomplete="off" class="add form-control mb-1" name="date" placeholder="Date" required>
+                  <button type="submit" class="btn btn-info btn-block add-event">Add Event!</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Button trigger modal -->
+            <!-- Modal -->
+            <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="change-password-modal-label" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="change-password-modal-label">Change Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="change-password" class="border">
+                      <div class="change-password-alert"></div>
+                      <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[old]" placeholder="Current password">
+                      <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[new]" placeholder="New password">
+                      <input class="btn btn-info" type="submit"  value="Change Password!">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
 
       <footer>
         <div class="footer-container">
@@ -30,34 +118,13 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                   <a class="dropdown-item" href="#">Profile Info</a>
-                  <a class="dropdown-item" href="#">Change Password</a>
+                  <a class="dropdown-item" id="change-password" href="#">Change Password</a>
                   <!-- <a class="dropdown-item" href="#">Something else here</a> -->
                 </div>
               </div>
-              <a class="nav-item nav-link" href="#">Sign Out</a>
+              <a class="nav-item nav-link" id="sign-out" href="#">Sign Out</a>
         </nav>
-      </div>
-
+        </div>
       </footer>
-      <!-- <footer>
-        <nav class="after-auth navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="#">created by erin n. bacon</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav d-flex align-items-center mr-auto">
-              <li class="nav-item">
-                <a id="change-password-button" class="btn btn-link after-auth" data-toggle="modal" data-target="#change-password-modal" href="#">Change Password<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a id="sign-out" class="btn btn-link after-auth" href="#">Sign Out<span class="sr-only">(current)</span></a>
-              </li>
-            </ul>
-          </div>
-          <a class="navbar-brand navbar-second-brand" href="#">WWJMD</a>
-        </nav>
-      </footer> -->
     </body>
 </html>
