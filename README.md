@@ -11,7 +11,6 @@
 * https://github.com/new-team-project-name/backend
 
 ## Front-end Technologies Used
-
 * HTML5
 * JavaScript
 * CSS
@@ -22,7 +21,6 @@
 * jQuery
 
 ## Back-end Technologies Used
-
 * Express
 * Mongoose
 * MongoDB
@@ -55,7 +53,7 @@ Put planning paragraphs here.
 # Development Process and Problem Solving
 * Erin and Soren teamed up to build the backend api using Express and MongoDB.
 * Eric started setting up the client api.
-* 
+*
 
 ### Difficulties Faced
 
