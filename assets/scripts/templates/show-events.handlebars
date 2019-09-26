@@ -1,0 +1,62 @@
+{{#each hangouts as |hangout|}}
+<div class="col-12">
+
+  <section data-id="{{hangout.id}}">
+    <h6>Title:
+        {{hangout.title}}
+    </h6>
+    <p>
+    <h6>Date:
+    {{hangout.date}}
+   </h6>
+   </p>
+    <p>
+      <h6>Location:
+        {{hangout.location}}
+      </h6>
+    </p>
+    <p>
+      {{hangout.description}}
+    </p>
+     {{#if hangout.website}}
+        <p>
+        <h6>Website:
+        {{hangout.website}}
+        </h6>
+        </p>
+     {{/if}}
+
+    <button data-id="{{hangout._id}}" class="btn btn-warning delete-button">Delete</button>
+
+
+<!--Edit Event Menu-->
+<div class="dropdown dropdown-inline">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Edit Event
+  </button>
+<div class="dropdown-menu">
+<form class="px-4 py-3 edit-hangout" data-id="edit-{{hangout._id}}">
+  <fieldset>
+<div class="form-group">
+<input type="date" class="text" name="hangout[title]" value="{{hangout.title}}" placeholder="Title">
+</div>
+
+<div class="form-group">
+<input type="date" class="text" name="hangout[date]" value="{{hangout.date}}">
+</div>
+
+<div class="form-group">
+<input type="text" class="text" name="hangout[location]" value="{{hangout.location}}" placeholder="Location">
+</div>
+<div class="form-group">
+<input type="text" class="text" name="hangout[description]" value="{{hangout.description}}" placeholder="Description">
+</div>
+<button type="submit" class="btn btn-outline-success">Save Changes</button>
+</fieldset>
+</form>
+</div>
+</div>
+
+  </section>
+</div>
+{{/each}}
