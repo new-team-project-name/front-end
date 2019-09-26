@@ -50,9 +50,14 @@ const onUpdateHangout = (event) => {
     .catch(ui.eventUpdateFailure)
 }
 
+const onAttend = () => {
+
+}
+
 const addHangoutEventHandlers = function () {
   $('#new-event').on('submit', onCreateHangout)
   $('.content').on('click', '.delete-button', onDeleteHangout)
+  $('.content').on('click', '.attend-button', onAttend)
   $('.content').on('click', '.update-button', onShowUpdateModal)
   $('#update-hangout').on('submit', onUpdateHangout)
 }
