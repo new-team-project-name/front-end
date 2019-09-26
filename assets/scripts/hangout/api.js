@@ -56,9 +56,39 @@ const deleteHangout = function (id) {
   })
 }
 
+// runs a get for Attendance objects owned by a particular Hangout
+const getAttendance = function (hangoutId) {
+  return $.ajax({
+    url: config.apiUrl + '/attendances/' + hangoutId,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+// creates an Attendance object owned by the User and the Hangout
+const createAttend = function (hangoutId) {
+  return $.ajax({
+    url: config.apiUrl + '/attendances',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      attendance: {
+        going: true,
+        owner: store.user._id,
+        hangout: hangoutId
+      }
+    }
+  })
+}
+
 module.exports = {
   onCreateHangout,
   getHangouts,
   updateHangout,
-  deleteHangout
+  deleteHangout,
+  createAttend,
+  getAttendance
 }
