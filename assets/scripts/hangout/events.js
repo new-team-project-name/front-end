@@ -6,7 +6,7 @@ const ui = require('./ui')
 const onCreateHangout = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.createEvent(data)
+  api.onCreateHangout(data)
     .then(ui.updateFeed)
     .catch(ui.eventCreateFailure)
 }
