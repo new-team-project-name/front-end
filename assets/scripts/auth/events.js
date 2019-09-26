@@ -42,7 +42,7 @@ const onSignOut = function (event) {
 }
 
 const addAuthEventHandlers = function () {
-  $('#sign-up-modal').on('submit', onSignUp)
+  $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('click', onSignOut)
