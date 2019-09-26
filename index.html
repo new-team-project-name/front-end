@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>GA SEI 04 HangOuts</title>
+      <title>GA HangOuts</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -16,7 +16,7 @@
 
       <!-- Button trigger modal -->
             <div class="before-auth sign-up-container dropdown">
-              <button class="btn btn-secondary dropdown-toggle after-auth" type="button" id="credentials" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn sign-in-button dropdown-toggle after-auth" type="button" id="credentials" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Sign Up/Sign In!
               </button>
               <div class="dropdown-menu p-4" aria-labelledby="sign up/sign in">
@@ -26,13 +26,13 @@
                   <input type="email" autocomplete="off" class="form-control mb-1" name="credentials[email]" placeholder="email (fake please)">
                   <input type="password" autocomplete="off" class="form-control mb-1" name="credentials[password]" placeholder="password">
                   <input type="password" autocomplete="off" class="form-control mb-1" name="credentials[password_confirmation]" placeholder="confirm password">
-                  <button type="submit" class="btn btn-info btn-block">Sign Up!</button>
+                  <button type="submit" class="btn sign-up-btn btn-block">Sign Up!</button>
                 </form>
                 <p>
                   <small>
                     <h2>already signed up?</h2>
-                    <button type="button" class="btn btn-block btn-info" data-toggle="modal" data-target="#sign-in-modal">
-                      sign in
+                    <button type="button" class="btn btn-block sign-in-btn" data-toggle="modal" data-target="#sign-in-modal">
+                      Sign In!
                     </button>
                   </small>
                 </p>
@@ -51,11 +51,11 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form id="sign-in" class="border">
+                <form id="sign-in">
                   <div class="sign-in-alert"></div>
                   <input class="form-control mb-2" autocomplete="on" type="text" name="credentials[email]" placeholder="Email">
                   <input class="form-control mb-2" autocomplete="on" type="password" name="credentials[password]" placeholder="Password">
-                  <input class="btn btn-info" type="submit"  value="Sign in!">
+                  <input class="btn sign-in-btn" type="submit"  value="Sign in!">
                 </form>
               </div>
             </div>
@@ -63,20 +63,20 @@
         </div>
       </div>
 
-
-      <div class="dropdown">
-              <h2>Add an Event!</h2>
-              <div class="p-4" aria-labelledby="new event">
-                <form id="new-event">
-                  <div class="add-event-alert"></div>
-                  <input type="text" autocomplete="off" class="add form-control mb-1" name="title" placeholder="Event Title" required>
-                  <input type="text" autocomplete="off" class="add form-control mb-1" name="location" placeholder="Location" required>
-                  <input type="text" autocomplete="off" class="add form-control mb-1" name="description" placeholder="Description" required>
-                  <input type="date" autocomplete="off" class="add form-control mb-1" name="date" placeholder="Date" required>
-                  <button type="submit" class="btn btn-info btn-block add-event">Add Event!</button>
-                </form>
-              </div>
-            </div>
+      <div class="before-auth add-event-container dropdown">
+        <button class="after-auth btn add-event-button dropdown-toggle" type="button" id="Add" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Add An Event!
+        </button>
+        <div class="dropdown-menu p-4" aria-labelledby="sign up/sign in">
+          <form id="new-event">
+            <div class="add-event-alert"></div>
+            <input type="text" autocomplete="off" class="add form-control mb-1" name="title" placeholder="Event Title" required>
+            <input type="text" autocomplete="off" class="add form-control mb-1" name="location" placeholder="Location" required>
+            <input type="text" autocomplete="off" class="add form-control mb-1" name="description" placeholder="Description" required>
+            <input type="date" autocomplete="off" class="add form-control mb-1" name="date" placeholder="Date" required>
+            <button type="submit" class="btn btn-outline-danger add-btn btn-block add-event">Add Event!</button>
+          </form>
+        </div>
 
             <!-- Button trigger modal -->
             <!-- Modal -->
@@ -129,8 +129,8 @@
       <footer>
         <div class="footer-container">
         <nav class="navbar fixed-bottom navbar-expand-lg" style="background-color: #000000">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <button class="navbar-toggler hamburger" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon hamburger"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav justify-content-between">
@@ -140,11 +140,11 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                   <a class="dropdown-item" href="#">Profile Info</a>
-                  <a class="dropdown-item" id="change-password-button" href="#">Change Password</a>
+                  <a id="change-password-button" class="after-auth dropdown-item" href="#">Change Password<span class="sr-only">(current)</span></a>
                   <!-- <a class="dropdown-item" href="#">Something else here</a> -->
                 </div>
               </div>
-              <a class="nav-item nav-link" id="sign-out" href="#">Sign Out</a>
+              <a class="nav-item nav-link" id="sign-out" href="#">Sign Out<span class="sr-only">(current)</span></a>
         </nav>
         </div>
       </footer>
