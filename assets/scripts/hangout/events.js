@@ -11,8 +11,7 @@ const onCreateHangout = function (event) {
     .catch(ui.eventCreateFailure)
 }
 
-const onGetHangouts = (event) => {
-  event.preventDefault()
+const onGetHangouts = () => {
   api.getHangouts()
     .then(ui.updateFeed)
     .catch(ui.eventGetFailure)
