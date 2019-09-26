@@ -16,7 +16,7 @@
 
       <!-- Button trigger modal -->
             <div class="before-auth sign-up-container dropdown">
-              <button class="btn sign-in-button dropdown-toggle after-auth" type="button" id="credentials" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="before-auth btn sign-in-button dropdown-toggle" type="button" id="credentials" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Sign Up/Sign In!
               </button>
               <div class="dropdown-menu p-4" aria-labelledby="sign up/sign in">
@@ -63,7 +63,7 @@
         </div>
       </div>
 
-      <div class="before-auth add-event-container dropdown">
+      <div class="after-auth add-event-container dropdown">
         <button class="after-auth btn add-event-button dropdown-toggle" type="button" id="Add" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Add An Event!
         </button>
@@ -77,8 +77,9 @@
             <button type="submit" class="btn btn-outline-danger add-btn btn-block add-event">Add Event!</button>
           </form>
         </div>
+      </div>
 
-      <div class="temporary-hangout-holder">
+      <div class="temporary-hangout-holder">Hello Hello Hello
       </div>
 
             <!-- Button trigger modal -->
@@ -117,7 +118,7 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form id="change-password" class="border">
+                    <form id="change-password-modal-form" class="border">
                       <div class="change-password-alert"></div>
                       <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[old]" placeholder="Current password">
                       <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[new]" placeholder="New password">
@@ -132,22 +133,18 @@
       <footer>
         <div class="footer-container">
         <nav class="navbar fixed-bottom navbar-expand-lg" style="background-color: #000000">
-          <button class="navbar-toggler hamburger" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon hamburger"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> -->
             <div class="navbar-nav justify-content-between">
               <div class="btn-group dropup">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="after-auth nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Settings
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                   <a class="dropdown-item" href="#">Profile Info</a>
                   <a id="change-password-button" class="after-auth dropdown-item" href="#">Change Password<span class="sr-only">(current)</span></a>
-                  <!-- <a class="dropdown-item" href="#">Something else here</a> -->
                 </div>
               </div>
-              <a class="nav-item nav-link" id="sign-out" href="#">Sign Out<span class="sr-only">(current)</span></a>
+              <a class="after-auth nav-item nav-link" id="sign-out" href="#">Sign Out<span class="sr-only">(current)</span></a>
         </nav>
         </div>
       </footer>
