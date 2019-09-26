@@ -2,6 +2,7 @@
 const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const store = require('./../store')
 
 const onCreateHangout = function (event) {
   event.preventDefault()
@@ -50,14 +51,38 @@ const onUpdateHangout = (event) => {
     .catch(ui.eventUpdateFailure)
 }
 
-const onAttend = () => {
-
+const onAttend = (event) => {
+  event.preventDefault()
+  // grab ID from target for the Hangout
+  const hangoutId = $(event.target).data('id')
+  // run a get on Attendances, getting only Attendnaces for this Hangout
+  api.getAttendance(hangoutId)
+    .then(data => {
+      // check if Attendances for this Hangout includes the current user already
+      // if so, the user has already RSVP'd
+      if (!data.attendances.includes((attendance) => {
+        return attendance.owner === store.user._id
+      })) {
+        // as long as the user has not already RSVP'd, create Attendance object
+        api.createAttend(hangoutId)
+          .then(ui.attendSuccess)
+          .catch(console.error)
+      } else {
+        console.log(data.attendances)
+      }
+    })
+    .catch(console.error)
+    // need to clean up console logs and console.errors
 }
+
+// "5d8cda3be2d56666f88f79ce"
+// "5d8cda3be2d56666f88f79ce"
+// "5d8cda3be2d56666f88f79ce"
 
 const addHangoutEventHandlers = function () {
   $('#new-event').on('submit', onCreateHangout)
   $('.content').on('click', '.delete-button', onDeleteHangout)
-  $('.content').on('click', '.attend-button', onAttend)
+  $('.temporary-hangout-holder').on('click', '.attend-button', onAttend)
   $('.content').on('click', '.update-button', onShowUpdateModal)
   $('#update-hangout').on('submit', onUpdateHangout)
 }
