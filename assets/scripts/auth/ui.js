@@ -3,63 +3,56 @@ const store = require('./../store')
 
 const signUpSuccess = function (data) {
   store.user = data.user
-  $('#auth').css('display', 'initial')
-  $('#pre-auth').css('display', 'none')
-  // $('.text-field').val('')
-  // $('.form-control').val('')
-  //  $('#sign-up').reset()
-  // console.log('signUpSuccess ran')
+  $('.after-auth').css('display', 'initial')
+  $('.before-auth').css('display', 'none')
+  $('.sign-up-alert').text('')
+  $('form').trigger('reset')
 }
 
 const signUpFailure = function () {
-  // $('.text-field').val('')
-  // $('.form-control').val('')
-  // console.error('signUpFailure ran')
+  $('.sign-up-alert').text('Sign up was not successful')
+  $('form').trigger('reset')
 }
 
 const signInSuccess = function (data) {
   store.user = data.user
-  $('#auth').css('display', 'initial')
-  $('#pre-auth').css('display', 'none')
-  // $('.text-field').val('')
-  // $('.form-control').val('')
-  //  $('#sign-up').reset()
-  // console.log('signInSuccess ran')
+  $('.after-auth').css('display', 'initial')
+  $('.before-auth').css('display', 'none')
+  $('form').trigger('reset')
+  $('.sign-up-alert').text('')
 }
 
 const signInFailure = function () {
-  // $('.text-field').val('')
-  // $('.form-control').val('')
-  // console.error('signInFailure ran')
+  $('.sign-in-alert').text('Sign in was not successful')
+  $('.sign-up-alert').text('')
+  $('form').trigger('reset')
 }
 
 const changePasswordSuccess = function (data) {
-  // $('#message').text('Password updated')
-  // $('#message').attr('class', 'success')
-  // $('.text-field').val('')
-  // console.log('changePaswordSuccess ran')
+  $('#change-password-modal').modal('hide')
+  $('.change-password-alert').text('')
+  $('form').trigger('reset')
 }
 
 const changePasswordFailure = function () {
-  // $('#message').text('Password couldn\'t be updated. Please try again.')
-  // $('#message').attr('class', 'failure')
-  // $('.text-field').val('')
-  // console.error('changePasswordFailure ran')
+  $('.change-password-alert').text('Password was not changed succesfully.')
+  $('form').trigger('reset')
 }
 
 const signOutSuccess = function (data) {
-  // $('#message').text('Sign off complete')
-  // $('#message').attr('class', 'success')
-  $('#auth').css('display', 'none')
-  $('#pre-auth').css('display', 'initial')
-  // $('.content').empty()
-  // console.log('signOutSuccess ran')
+  store.user = {}
+  $('.after-auth').css('display', 'none')
+  $('.before-auth').css('display', 'initial')
+  // $('#signed-in-user').text('')
+  $('.navbar').hide()
+  $('#credentials').show()
+  $('.content').empty()
+  $('form').trigger('reset')
 }
 
 const signOutFailure = function () {
-  // $('#message').text('Sorry, you couldn\'t be signed off')
-  // $('#message').attr('class', 'failure')
-  // console.error('signOutFailure ran')
+  $('.change-password-alert').text('')
+  $('form').trigger('reset')
 }
 
 module.exports = {

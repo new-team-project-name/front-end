@@ -13,5 +13,7 @@ $(() => {
   authEvents.addAuthEventHandlers()
   hangoutEvents.addHangoutEventHandlers()
   hangoutEvents.onGetHangouts()
-  // your JS code goes here
+  $('.before-auth').show()
+  $('.after-auth').hide()
+  $('.navbar').show()
 })
