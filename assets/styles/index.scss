@@ -1,9 +1,77 @@
 @import '~bootstrap/scss/bootstrap';
 
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Cantora+One|Roboto|Francois+One|Lemon&display=swap');
+
+$primary: #fa4542;
+$secondary: white;
+
 a {
+  color: $primary;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'Cantora One', sans-serif;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+.change-password-alert {
   color: red;
+
+}
+
+.dropdown-menu {
+  border: 4px $primary solid;
+  padding: 2px;
+}
+
+// .modal-body {
+//   margin: 1px black solid;
+// }
+
+.modal-header {
+  background-color: $primary;
+  color: white;
+}
+
+.modal-title {
+  color: white;
 }
 
 .navbar-nav {
   width: 100%;
+}
+
+.sign-in-alert {
+  color: red;
+}
+
+
+.sign-up-alert {
+  color: red;
+}
+
+.add-event-button,
+.sign-in-button {
+  background-color: $primary;
+  color: white;
+  display: flex;
+  font-weight: 700;
+  margin: 10px;
+  padding: 10px;
+}
+
+.sign-in-btn,
+.sign-up-btn {
+  background-color: $primary;
+  color: white;
+  font-weight: bolder;
+
 }
