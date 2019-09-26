@@ -27,7 +27,9 @@
 
         <button data-id="{{hangout._id}}" class="btn btn-primary attend-button">RSVP</button>
      {{/if}}
-
+    {{#if store.user._id}}
+    <button data-id="{{hangout._id}}" class="btn btn-primary attend-button">RSVP</button>
+    {{/if}}
      {{#if hangout.editable}}
     <button data-id="{{hangout._id}}" class="btn btn-warning delete-button">Delete</button>
 

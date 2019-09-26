@@ -12,7 +12,12 @@ const updateFeed = function (data) {
   })
   console.log(editData)
 
-  const showHangoutsHTML = showHangouts({ hangouts: editData })
+  const showHangoutsHTML = showHangouts({ hangouts: editData, store: store })
+  $('.temporary-hangout-holder').html(showHangoutsHTML)
+}
+
+const initialUpdateFeed = function (data) {
+  const showHangoutsHTML = showHangouts({ hangouts: data.hangouts, store: store })
   $('.temporary-hangout-holder').html(showHangoutsHTML)
 }
 
@@ -22,5 +27,6 @@ const eventCreateFailure = function () {
 
 module.exports = {
   updateFeed,
-  eventCreateFailure
+  eventCreateFailure,
+  initialUpdateFeed
 }
