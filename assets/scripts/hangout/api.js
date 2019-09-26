@@ -37,7 +37,7 @@ const getHangouts = function () {
 
 const updateHangout = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/hangouts' + data.hangouts.id,
+    url: config.apiUrl + '/hangouts/' + data.hangoutId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -48,7 +48,7 @@ const updateHangout = function (data) {
 
 const deleteHangout = function (id) {
   return $.ajax({
-    url: config.apiUrl + '/hangouts' + id,
+    url: config.apiUrl + '/hangouts/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
