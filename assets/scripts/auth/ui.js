@@ -47,7 +47,6 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function (data) {
-<<<<<<< HEAD
   store.user = {}
   $('.after-auth').css('display', 'none')
   $('.before-auth').css('display', 'initial')
@@ -57,14 +56,12 @@ const signOutSuccess = function (data) {
   setTimeout(function () { $('.sign-out-alert').text('') }, 3000)
   $('.content').empty()
   $('form').trigger('reset')
-=======
   // $('#message').text('Sign off complete')
   // $('#message').attr('class', 'success')
   $('#auth').css('display', 'none')
   $('#pre-auth').css('display', 'initial')
   $('.content').empty()
   // console.log('signOutSuccess ran')
->>>>>>> Typo fix
 }
 
 const signOutFailure = function () {
