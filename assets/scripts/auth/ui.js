@@ -18,8 +18,9 @@ const signInSuccess = function (data) {
   store.user = data.user
   $('.after-auth').css('display', 'initial')
   $('.before-auth').css('display', 'none')
-  $('form').trigger('reset')
   $('.sign-up-alert').text('')
+  $('#sign-in-modal').modal('hide')
+  $('form').trigger('reset')
 }
 
 const signInFailure = function () {
