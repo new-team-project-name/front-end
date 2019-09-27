@@ -27,11 +27,8 @@
 
         <button data-id="{{hangout._id}}" class="btn btn-sm attend-button">RSVP</button>
      {{/if}}
-    <a href="#" data-toggle="popover" data-trigger="focus" data-placement="left" data-toggle="popover" title="Attendees">
-      <button data-id="{{hangout._id}}" class="btn btn-sm btn-outline-dark show-attend-button">Show Attendees</button>
-    </a>
     {{#if hangout.loggedIn}}
-        <button data-id="{{hangout._id}}" class="btn btn-sm attend-button">RSVP</button>
+      <button data-id="{{hangout._id}}" class="btn btn-sm attend-button">RSVP</button>
     {{/if}}
      {{#if hangout.editable}}
     <button data-id="{{hangout._id}}" class="btn btn-outline-dark btn-sm delete-btn delete-button">Delete</button>
