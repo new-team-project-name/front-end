@@ -1,6 +1,7 @@
 'use strict'
 
 const showHangouts = require('../templates/show-hangouts.handlebars')
+const showAttendees = require('../templates/show-attendees.handlebars')
 const store = require('./../store')
 
 const updateFeed = function (data) {
@@ -17,6 +18,20 @@ const updateFeed = function (data) {
   $('.temporary-hangout-holder').html(showHangoutsHTML)
 }
 
+const getAttendance = function (data) {
+  const showAttendanceHTML = showAttendees({ attendees: data.attendances })
+  $('.custom-popover').html(showAttendanceHTML)
+  $('[data-toggle="popover"]').popover({
+    html: true,
+    content: function () {
+      return $('#popover-content').html()
+    }
+  })
+  $('.popover-dismiss').popover({
+    trigger: 'focus'
+  })
+}
+
 const initialUpdateFeed = function (data) {
   const showHangoutsHTML = showHangouts({ hangouts: data.hangouts })
   $('.temporary-hangout-holder').html(showHangoutsHTML)
@@ -29,5 +44,6 @@ const eventCreateFailure = function () {
 module.exports = {
   updateFeed,
   eventCreateFailure,
-  initialUpdateFeed
+  initialUpdateFeed,
+  getAttendance
 }

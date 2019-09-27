@@ -67,9 +67,9 @@ const onAttend = (event) => {
     .then(data => {
       // check if Attendances for this Hangout includes the current user already
       // if so, the user has already RSVP'd
-      if (!data.attendances.includes((attendance) => {
-        return attendance.owner === store.user._id
-      })) {
+      const attendances = data.attendances.map((attendance) => { return attendance.owner._id })
+      console.log(attendances)
+      if (!attendances.includes(store.user._id)) {
         // as long as the user has not already RSVP'd, create Attendance object
         api.createAttend(hangoutId)
           .then(ui.attendSuccess)
@@ -82,11 +82,19 @@ const onAttend = (event) => {
     // need to clean up console logs and console.errors
 }
 
+const onGetAttendance = (event) => {
+  const hangoutId = $(event.target).data('id')
+  api.getAttendance(hangoutId)
+    .then(ui.getAttendance)
+    .catch(ui.getAttendanceFailure)
+}
+
 const addHangoutEventHandlers = function () {
   $('#new-event').on('submit', onCreateHangout)
   $('.temporary-hangout-holder').on('click', '.delete-button', onDeleteHangout)
   $('.temporary-hangout-holder').on('click', '.attend-button', onAttend)
   $('.temporary-hangout-holder').on('submit', '.edit-hangout', onUpdateHangout)
+  $('.temporary-hangout-holder').on('click', '.show-attend-button', onGetAttendance)
   // $('#update-hangout').on('submit', onUpdateHangout)
 }
 
