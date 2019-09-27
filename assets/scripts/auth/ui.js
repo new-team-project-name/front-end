@@ -38,6 +38,8 @@ const changePasswordSuccess = function (data) {
   $('#change-password-modal').modal('hide')
   $('.change-password-alert').text('')
   $('form').trigger('reset')
+  $('.sign-out-alert').text('Password updated!')
+  setTimeout(function () { $('.sign-out-alert').text('') }, 2000)
 }
 
 const changePasswordFailure = function () {
