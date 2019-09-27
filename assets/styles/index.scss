@@ -56,16 +56,25 @@ h2 {
 
 .modal-header {
   background-color: $primary;
-  color: white;
+  color: $secondary;
 }
 
 .modal-title {
-  color: white;
+  color: $secondary;
 }
 
 .navbar {
   min-height: 3rem;
   padding: 4px 16px;
+}
+
+.nav-btn {
+  background-color: $primary;
+  color: #ffffff;
+  display: flex;
+  font-weight: 700;
+  margin: 5px;
+  padding: 4.5px 6px;
 }
 
 .navbar-nav {
@@ -76,7 +85,6 @@ h2 {
   color: red;
 }
 
-
 .sign-up-alert {
   color: red;
 }
@@ -85,7 +93,7 @@ h2 {
 .attend-button,
 .sign-in-button {
   background-color: $primary;
-  color: white;
+  color: $secondary;
   display: flex;
   font-weight: 700;
   margin: 10px 0;
@@ -95,7 +103,7 @@ h2 {
 .sign-in-btn,
 .sign-up-btn {
   background-color: $primary;
-  color: white;
+  color: $secondary;
   font-weight: bolder;
 
 }
