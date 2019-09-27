@@ -12,7 +12,11 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>GA SEI 04</h1>
+      <div class="container-fluid d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+          <img class="logo" src="/public/GA-Cog-900.png">
+          <h1>SEI 04</h1>
+        </div>
       <div class="sign-out-alert"></div>
 
       <!-- Button trigger modal -->
@@ -20,7 +24,7 @@
               <button class="before-auth btn sign-in-button dropdown-toggle" type="button" id="credentials" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Sign Up/Sign In!
               </button>
-              <div class="dropdown-menu p-4" aria-labelledby="sign up/sign in">
+              <div class="dropdown-menu dropdown-menu-right p-4" aria-labelledby="sign up/sign in">
                 <form id="sign-up">
                   <h2>sign up</h2>
                   <div class="sign-up-alert"></div>
@@ -40,29 +44,6 @@
               </div>
             </div>
 
-        <!-- Button Trigger Modal -->
-      <div class="before-auth">
-        <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal-label" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="sign-in-modal-label">Sign In!</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form id="sign-in">
-                  <div class="sign-in-alert"></div>
-                  <input class="form-control mb-2" autocomplete="on" type="text" name="credentials[email]" placeholder="Email">
-                  <input class="form-control mb-2" autocomplete="on" type="password" name="credentials[password]" placeholder="Password">
-                  <input class="btn sign-in-btn" type="submit"  value="Sign in!">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div class="after-auth add-event-container dropdown">
         <button class="after-auth btn add-event-button dropdown-toggle" type="button" id="Add" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -79,9 +60,12 @@
           </form>
         </div>
       </div>
+    </div>
 
-      <div class="temporary-hangout-holder">Hello Hello Hello
+    <div class="container event-container">
+      <div class="temporary-hangout-holder row">
       </div>
+    </div>
 
             <!-- Button trigger modal -->
             <!-- Modal -->
@@ -116,6 +100,30 @@
         </nav>
       </div>
       </footer>
+
+      <!-- Button Trigger Modal -->
+      <div class="before-auth">
+        <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal-label" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="sign-in-modal-label">Sign In!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="sign-in">
+                  <div class="sign-in-alert"></div>
+                  <input class="form-control mb-2" autocomplete="on" type="text" name="credentials[email]" placeholder="Email">
+                  <input class="form-control mb-2" autocomplete="on" type="password" name="credentials[password]" placeholder="Password">
+                  <input class="btn sign-in-btn" type="submit"  value="Sign in!">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div id="popover-content" style="display: none">
         <ul class="list-group custom-popover">
