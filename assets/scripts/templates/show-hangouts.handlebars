@@ -29,7 +29,8 @@
           <button data-id="{{hangout._id}}" class="btn btn-sm attend-button">RSVP</button>
       {{/if}}
        {{#if hangout.editable}}
-      <button data-id="{{hangout._id}}" class="btn btn-outline-dark btn-sm delete-btn delete-button">Delete</button>
+       <div align="right">
+        <button data-id="{{hangout._id}}" class="btn btn-outline-dark margin-right btn-sm delete-btn delete-button">Delete</button>
 
 
   <!--Edit Event Menu-->
@@ -59,6 +60,7 @@
           </form>
         </div>
       </div>
+    </div>
     </div>
 {{/if}}
 
