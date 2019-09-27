@@ -52,6 +52,8 @@ const signOutSuccess = function (data) {
   $('.before-auth').css('display', 'initial')
   // $('#signed-in-user').text('')
   $('#credentials').show()
+  $('.sign-out-alert').text('Sign out was successful!')
+  setTimeout(function () { $('.sign-out-alert').text('') }, 3000)
   $('.content').empty()
   $('form').trigger('reset')
 }
