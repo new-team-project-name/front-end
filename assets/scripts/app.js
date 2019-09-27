@@ -17,7 +17,12 @@ $(() => {
   $('.before-auth').show()
   $('.after-auth').hide()
   $('.navbar').show()
-  // your JS code goes here
+  $('#sign-in-modal').on('hidden.bs.modal', function () {
+    $('.sign-in-alert').empty()
+  })
+  $('#change-password-modal').on('hidden.bs.modal', function () {
+    $('.change-password-alert').empty()
+  })
 
   // code for limiting HTML calenders to current date+
   const dtToday = new Date()
