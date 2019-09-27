@@ -20,10 +20,11 @@
 
     <div class="card-body">
       <p class="card-text">{{hangout.description}}</p>
-
+      {{#if hangout.loggedIn}}
       <a href="#" data-toggle="popover" data-trigger="focus" data-placement="left" data-toggle="popover" title="Attendees">
         <button data-id="{{hangout._id}}" class="btn btn-sm btn-outline-dark show-attend-button">Show Attendees</button>
       </a>
+      {{/if}}
       {{#if hangout.loggedIn}}
           <button data-id="{{hangout._id}}" class="btn btn-sm attend-button">RSVP</button>
       {{/if}}
