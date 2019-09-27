@@ -99,55 +99,22 @@
                       <div class="change-password-alert"></div>
                       <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[old]" placeholder="Current password">
                       <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[new]" placeholder="New password">
-                      <input class="btn btn-info" type="submit"  value="Change Password!">
+                      <input class="btn btn-light nav-btn" type="submit"  value="Change Password!">
                     </form>
                   </div>
                 </div>
               </div>
             </div>
-
-
-            <!-- Button trigger modal -->
-            <!-- Modal -->
-            <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="change-password-modal-label" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="change-password-modal-label">Change Password</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form id="change-password-modal-form" class="border">
-                      <div class="change-password-alert"></div>
-                      <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[old]" placeholder="Current password">
-                      <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[new]" placeholder="New password">
-                      <input class="btn btn-info" type="submit"  value="Change Password!">
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-
 
       <footer>
         <div class="footer-container">
         <nav class="navbar fixed-bottom navbar-expand-lg" style="background-color: #000000">
-          <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> -->
-            <div class="navbar-nav justify-content-between">
-              <div class="btn-group dropup">
-                <button class="after-auth btn btn-outline-dark btn-sm nav-btn dropdown-toggle" type="button" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Settings
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="#">Profile Info</a>
-                  <a id="change-password-button" class="after-auth dropdown-item" href="#">Change Password<span class="sr-only">(current)</span></a>
-                </div>
-              </div>
-              <a class="after-auth btn btn-outline-dark btn-sm nav-btn" id="sign-out" href="#">Sign Out<span class="sr-only">(current)</span></a>
+          <div class="navbar-nav justify-content-between">
+            <button class="after-auth btn btn-sm nav-btn" id="change-password-button" type="button" href="#"  role="button" data-toggle="modal" data-target="#change-password-modal">Change Password<span class="sr-only">(current)</span></button>
+              <a class="after-auth btn btn-sm nav-btn" id="sign-out" href="#">Sign Out<span class="sr-only">(current)</span></a>
+          </div>
         </nav>
-        </div>
+      </div>
       </footer>
     </body>
 </html>
