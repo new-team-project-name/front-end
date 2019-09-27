@@ -28,8 +28,27 @@ h2 {
   display: initial;
 }
 
+.attend-button {
+  background-color: $primary;
+  color: $secondary;
+  display: flex;
+  font-weight: 700;
+  margin: 2px 0 4px 0;
+  padding: 5px 10px;
+}
+
 .before-auth {
   display: none;
+}
+
+.card {
+  border: 1px black solid;
+}
+
+.card-header {
+  background-color: $primary;
+  color: #fff;
+  font-weight: 900;
 }
 
 .change-password-alert {
@@ -42,19 +61,13 @@ h2 {
 }
 
 .dropdown-menu {
-  border: 4px $primary solid;
+  border: 2.5px black solid;
   padding: 2px;
 }
 
 .event-container {
   display: flex;
   justify-content: center;
-}
-
-
-.logo {
-  height: 5em;
-  margin: 0 0 1rem 0;
 }
 
 .event-button-left {
@@ -67,7 +80,7 @@ h2 {
 
 .delete-btn,
 .edit-btn {
-  margin: 2px;
+  margin: 2px 0 4px 0;
   padding: 5px 10px;
 }
 
@@ -85,6 +98,7 @@ h2 {
   margin: 1px black solid;
 }
 
+// remove white on upper right side of motal title
 .modal-content {
   background-color: transparent;
 }
@@ -136,7 +150,6 @@ h2 {
 }
 
 .add-event-button,
-.attend-button,
 .sign-in-button {
   background-color: $primary;
   color: $secondary;
