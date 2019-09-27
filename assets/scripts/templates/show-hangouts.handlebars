@@ -27,7 +27,9 @@
 
         <button data-id="{{hangout._id}}" class="btn btn-primary attend-button">RSVP</button>
      {{/if}}
-
+    {{#if hangout.loggedIn}}
+      <button data-id="{{hangout._id}}" class="btn btn-primary attend-button">RSVP</button>
+    {{/if}}
      {{#if hangout.editable}}
     <button data-id="{{hangout._id}}" class="btn btn-warning delete-button">Delete</button>
 
@@ -38,25 +40,25 @@
     Edit Event
   </button>
 <div class="dropdown-menu">
-<form class="px-4 py-3 edit-hangout" data-id="edit-{{hangout._id}}">
-  <fieldset>
-<div class="form-group">
-<input type="text" class="text" name="hangout[title]" value="{{hangout.title}}" placeholder="Title">
-</div>
+  <form class="px-4 py-3 edit-hangout" data-id="{{hangout._id}}">
+    <fieldset>
+      <div class="form-group">
+        <input type="text" class="text" name="hangout[title]" value="{{hangout.title}}" placeholder="Title">
+      </div>
 
-<div class="form-group">
-<input type="date" class="text" name="hangout[date]" value="{{hangout.date}}">
-</div>
+      <div class="form-group">
+        <input type="date" class="text" name="hangout[date]" value="{{hangout.date}}">
+      </div>
 
-<div class="form-group">
-<input type="text" class="text" name="hangout[location]" value="{{hangout.location}}" placeholder="Location">
-</div>
-<div class="form-group">
-<input type="text" class="text" name="hangout[description]" value="{{hangout.description}}" placeholder="Description">
-</div>
-<button type="submit" class="btn btn-outline-success">Save Changes</button>
-</fieldset>
-</form>
+      <div class="form-group">
+        <input type="text" class="text" name="hangout[location]" value="{{hangout.location}}" placeholder="Location">
+      </div>
+      <div class="form-group">
+        <input type="text" class="text" name="hangout[description]" value="{{hangout.description}}" placeholder="Description">
+      </div>
+      <button type="submit" class="btn btn-outline-success">Save Changes</button>
+    </fieldset>
+  </form>
 </div>
 </div>
 {{/if}}

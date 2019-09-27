@@ -12,6 +12,12 @@ const onCreateHangout = function (event) {
     .catch(ui.eventCreateFailure)
 }
 
+const onInitialGetHangouts = () => {
+  api.getHangouts()
+    .then(ui.initialUpdateFeed)
+    .catch(ui.eventGetFailure)
+}
+
 const onGetHangouts = () => {
   api.getHangouts()
     .then(ui.updateFeed)
@@ -26,26 +32,27 @@ const onDeleteHangout = (event) => {
     .catch(ui.eventDeleteFailure)
 }
 
-const onShowUpdateModal = () => {
-  const currentHangout = $(event.target)
-  const title = currentHangout.data('title')
-  const picture = currentHangout.data('picture')
-  const description = currentHangout.data('description')
-  const date = currentHangout.data('date')
-  const location = currentHangout.data('location')
-  const website = currentHangout.data('website')
-  $('#title').value(title)
-  $('#picture').value(picture)
-  $('#description').value(description)
-  $('#date').value(date)
-  $('#location').value(location)
-  $('#website').value(website)
-  $('#update-modal').modal('show')
-}
+// const onShowUpdateModal = () => {
+//   const currentHangout = $(event.target)
+//   const title = currentHangout.data('title')
+//   const picture = currentHangout.data('picture')
+//   const description = currentHangout.data('description')
+//   const date = currentHangout.data('date')
+//   const location = currentHangout.data('location')
+//   const website = currentHangout.data('website')
+//   $('#title').value(title)
+//   $('#picture').value(picture)
+//   $('#description').value(description)
+//   $('#date').value(date)
+//   $('#location').value(location)
+//   $('#website').value(website)
+//   $('#update-modal').modal('show')
+// }
 
 const onUpdateHangout = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
+  data.hangoutId = $(event.target).data('id')
   api.updateHangout(data)
     .then(ui.updateFeed)
     .catch(ui.eventUpdateFailure)
@@ -75,19 +82,16 @@ const onAttend = (event) => {
     // need to clean up console logs and console.errors
 }
 
-// "5d8cda3be2d56666f88f79ce"
-// "5d8cda3be2d56666f88f79ce"
-// "5d8cda3be2d56666f88f79ce"
-
 const addHangoutEventHandlers = function () {
   $('#new-event').on('submit', onCreateHangout)
-  $('.content').on('click', '.delete-button', onDeleteHangout)
+  $('.temporary-hangout-holder').on('click', '.delete-button', onDeleteHangout)
   $('.temporary-hangout-holder').on('click', '.attend-button', onAttend)
-  $('.content').on('click', '.update-button', onShowUpdateModal)
-  $('#update-hangout').on('submit', onUpdateHangout)
+  $('.temporary-hangout-holder').on('submit', '.edit-hangout', onUpdateHangout)
+  // $('#update-hangout').on('submit', onUpdateHangout)
 }
 
 module.exports = {
   addHangoutEventHandlers,
+  onInitialGetHangouts,
   onGetHangouts
 }

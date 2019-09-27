@@ -1,12 +1,15 @@
 'use strict'
 const store = require('./../store')
+const hangoutEvents = require('./../hangout/events')
 
 const signUpSuccess = function (data) {
   store.user = data.user
+  store.user.loggedIn = true
   $('.after-auth').css('display', 'initial')
   $('.before-auth').css('display', 'none')
   $('.sign-up-alert').text('')
   $('form').trigger('reset')
+  hangoutEvents.onGetHangouts()
 }
 
 const signUpFailure = function () {
@@ -16,11 +19,14 @@ const signUpFailure = function () {
 
 const signInSuccess = function (data) {
   store.user = data.user
+  store.user.loggedIn = true
+  console.log(store.user)
   $('.after-auth').css('display', 'initial')
   $('.before-auth').css('display', 'none')
   $('.sign-up-alert').text('')
   $('#sign-in-modal').modal('hide')
   $('form').trigger('reset')
+  hangoutEvents.onGetHangouts()
 }
 
 const signInFailure = function () {

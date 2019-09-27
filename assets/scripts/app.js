@@ -13,7 +13,7 @@ const store = require('./store')
 $(() => {
   authEvents.addAuthEventHandlers()
   hangoutEvents.addHangoutEventHandlers()
-  hangoutEvents.onGetHangouts()
+  hangoutEvents.onInitialGetHangouts()
   $('.before-auth').show()
   $('.after-auth').hide()
   $('.navbar').show()

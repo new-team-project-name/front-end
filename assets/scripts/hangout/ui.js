@@ -5,6 +5,7 @@ const store = require('./../store')
 
 const updateFeed = function (data) {
   const editData = data.hangouts.map((hangout) => {
+    hangout.loggedIn = true
     if (hangout.owner === store.user._id) {
       hangout.editable = true
     }
@@ -16,11 +17,17 @@ const updateFeed = function (data) {
   $('.temporary-hangout-holder').html(showHangoutsHTML)
 }
 
+const initialUpdateFeed = function (data) {
+  const showHangoutsHTML = showHangouts({ hangouts: data.hangouts })
+  $('.temporary-hangout-holder').html(showHangoutsHTML)
+}
+
 const eventCreateFailure = function () {
 // more code
 }
 
 module.exports = {
   updateFeed,
-  eventCreateFailure
+  eventCreateFailure,
+  initialUpdateFeed
 }
