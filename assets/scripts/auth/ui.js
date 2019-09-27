@@ -20,7 +20,6 @@ const signUpFailure = function () {
 const signInSuccess = function (data) {
   store.user = data.user
   store.user.loggedIn = true
-  console.log(store.user)
   $('.after-auth').css('display', 'initial')
   $('.before-auth').css('display', 'none')
   $('.sign-up-alert').text('')
@@ -50,14 +49,11 @@ const signOutSuccess = function (data) {
   store.user = {}
   $('.after-auth').css('display', 'none')
   $('.before-auth').css('display', 'initial')
-  // $('#signed-in-user').text('')
   $('#credentials').show()
   $('.sign-out-alert').text('Sign out was successful!')
   setTimeout(function () { $('.sign-out-alert').text('') }, 3000)
   $('.content').empty()
   $('form').trigger('reset')
-  // $('#message').text('Sign off complete')
-  // $('#message').attr('class', 'success')
   $('#auth').css('display', 'none')
   $('#pre-auth').css('display', 'initial')
   $('.content').empty()

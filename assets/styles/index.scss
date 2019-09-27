@@ -16,7 +16,7 @@ body {
 
 h1 {
   font-family: 'Cantora One', sans-serif;
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 800;
 }
 
@@ -34,6 +34,7 @@ h2 {
 
 .change-password-alert {
   color: red;
+  min-height: 25px;
 }
 
 .card {
@@ -45,16 +46,20 @@ h2 {
   padding: 2px;
 }
 
-.logo {
-  height: 5em;
-  margin: 0 0 1rem 0;
-}
-
 .delete-btn,
 .edit-btn {
   margin: 2px;
   padding: 5px 10px;
 }
+
+.logo {
+  height: 5em;
+  margin: 0 0 1rem 0;
+}
+
+// .logo-container {
+//   position: sticky;
+// }
 
 .modal-body {
   background-color: #fff;
@@ -94,6 +99,17 @@ h2 {
 
 .sign-in-alert {
   color: red;
+  min-height: 25px;
+}
+
+.sign-out-alert {
+  color: #00cc66;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 5px;
+  min-height: 3rem;
+  text-align: center;
 }
 
 .sign-up-alert {

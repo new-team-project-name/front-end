@@ -4,7 +4,6 @@ const config = require('./../config')
 const store = require('./../store')
 
 const onCreateHangout = function (data) {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/hangouts',
     method: 'POST',
@@ -29,9 +28,6 @@ const onCreateHangout = function (data) {
 const getHangouts = function () {
   return $.ajax({
     url: config.apiUrl + '/hangouts'
-    // headers: {
-    //   Authorization: 'Token token=' + store.user.token
-    // }
   })
 }
 

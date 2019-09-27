@@ -12,12 +12,11 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div class="container-fluid d-flex align-items-center justify-content-between">
+      <div class="container-fluid logo-container d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
           <img class="logo" src="/public/GA-Cog-900.png">
           <h1>SEI 04</h1>
         </div>
-      <div class="sign-out-alert"></div>
 
       <!-- Button trigger modal -->
             <div class="before-auth sign-up-container dropdown">
@@ -62,6 +61,7 @@
       </div>
     </div>
 
+    <div class="sign-out-alert"></div>
     <div class="container event-container">
       <div class="temporary-hangout-holder row">
       </div>
@@ -79,7 +79,7 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form id="change-password" class="border">
+                    <form id="change-password">
                       <div class="change-password-alert"></div>
                       <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[old]" placeholder="Current password">
                       <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[new]" placeholder="New password">
