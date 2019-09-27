@@ -32,23 +32,6 @@ const onDeleteHangout = (event) => {
     .catch(ui.eventDeleteFailure)
 }
 
-// const onShowUpdateModal = () => {
-//   const currentHangout = $(event.target)
-//   const title = currentHangout.data('title')
-//   const picture = currentHangout.data('picture')
-//   const description = currentHangout.data('description')
-//   const date = currentHangout.data('date')
-//   const location = currentHangout.data('location')
-//   const website = currentHangout.data('website')
-//   $('#title').value(title)
-//   $('#picture').value(picture)
-//   $('#description').value(description)
-//   $('#date').value(date)
-//   $('#location').value(location)
-//   $('#website').value(website)
-//   $('#update-modal').modal('show')
-// }
-
 const onUpdateHangout = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -68,18 +51,16 @@ const onAttend = (event) => {
       // check if Attendances for this Hangout includes the current user already
       // if so, the user has already RSVP'd
       const attendances = data.attendances.map((attendance) => { return attendance.owner._id })
-      console.log(attendances)
       if (!attendances.includes(store.user._id)) {
         // as long as the user has not already RSVP'd, create Attendance object
         api.createAttend(hangoutId)
           .then(ui.attendSuccess)
-          .catch(console.error)
+          .catch(ui.rsvpFailure)
       } else {
-        console.log(data.attendances)
+        ui.rsvpAlreadySent()
       }
     })
-    .catch(console.error)
-    // need to clean up console logs and console.errors
+    .catch(ui.rsvpFailure)
 }
 
 const onGetAttendance = (event) => {
@@ -95,7 +76,6 @@ const addHangoutEventHandlers = function () {
   $('.temporary-hangout-holder').on('click', '.attend-button', onAttend)
   $('.temporary-hangout-holder').on('submit', '.edit-hangout', onUpdateHangout)
   $('.temporary-hangout-holder').on('click', '.show-attend-button', onGetAttendance)
-  // $('#update-hangout').on('submit', onUpdateHangout)
 }
 
 module.exports = {

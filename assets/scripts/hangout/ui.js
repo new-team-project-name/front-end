@@ -12,7 +12,6 @@ const updateFeed = function (data) {
     }
     return hangout
   })
-  console.log(editData)
 
   const showHangoutsHTML = showHangouts({ hangouts: editData })
   $('.temporary-hangout-holder').html(showHangoutsHTML)
@@ -32,18 +31,37 @@ const getAttendance = function (data) {
   })
 }
 
+const attendSuccess = function () {
+  $('.sign-out-alert').text('Congratulations!!! Your RSVP has been sent!')
+  setTimeout(function () { $('.sign-out-alert').text('') }, 2000)
+}
+
+const rsvpFailure = function () {
+  $('.sign-out-alert').text('Sorry, RSVP was not successful!')
+  setTimeout(function () { $('.sign-out-alert').text('') }, 2000)
+}
+
+const rsvpAlreadySent = function () {
+  $('.sign-out-alert').text('You have already sent an RSVP for this event!')
+  setTimeout(function () { $('.sign-out-alert').text('') }, 2000)
+}
+
 const initialUpdateFeed = function (data) {
   const showHangoutsHTML = showHangouts({ hangouts: data.hangouts })
   $('.temporary-hangout-holder').html(showHangoutsHTML)
 }
 
 const eventCreateFailure = function () {
-// more code
+  $('.sign-out-alert').text('Sorry, you event was not created. Try again.')
+  setTimeout(function () { $('.sign-out-alert').text('') }, 3000)
 }
 
 module.exports = {
-  updateFeed,
+  attendSuccess,
   eventCreateFailure,
+  getAttendance,
   initialUpdateFeed,
-  getAttendance
+  rsvpFailure,
+  rsvpAlreadySent,
+  updateFeed
 }
