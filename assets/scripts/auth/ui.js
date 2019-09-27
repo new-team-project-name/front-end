@@ -51,14 +51,13 @@ const signOutSuccess = function (data) {
   $('.after-auth').css('display', 'none')
   $('.before-auth').css('display', 'initial')
   // $('#signed-in-user').text('')
-  $('.navbar').hide()
   $('#credentials').show()
   $('.content').empty()
   $('form').trigger('reset')
 }
 
 const signOutFailure = function () {
-  $('.change-password-alert').text('')
+  $('.sign-out-alert').text('Sorry, there was an error signing out.')
   $('form').trigger('reset')
 }
 
