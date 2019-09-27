@@ -25,18 +25,18 @@
         </h6>
         </p>
 
-        <button data-id="{{hangout._id}}" class="btn btn-primary attend-button">RSVP</button>
+        <button data-id="{{hangout._id}}" class="btn btn-sm attend-button">RSVP</button>
      {{/if}}
     {{#if hangout.loggedIn}}
-      <button data-id="{{hangout._id}}" class="btn btn-primary attend-button">RSVP</button>
+      <button data-id="{{hangout._id}}" class="btn btn-sm attend-button">RSVP</button>
     {{/if}}
      {{#if hangout.editable}}
-    <button data-id="{{hangout._id}}" class="btn btn-warning delete-button">Delete</button>
+    <button data-id="{{hangout._id}}" class="btn btn-outline-dark btn-sm delete-btn delete-button">Delete</button>
 
 
 <!--Edit Event Menu-->
 <div class="dropdown dropdown-inline">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="btn btn-outline-dark btn-sm edit-btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Edit Event
   </button>
 <div class="dropdown-menu">
@@ -56,7 +56,7 @@
       <div class="form-group">
         <input type="text" class="text" name="hangout[description]" value="{{hangout.description}}" placeholder="Description">
       </div>
-      <button type="submit" class="btn btn-outline-success">Save Changes</button>
+      <button type="submit" class="btn btn-outline-dark">Save Changes</button>
     </fieldset>
   </form>
 </div>

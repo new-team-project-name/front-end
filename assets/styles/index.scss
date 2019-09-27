@@ -29,6 +29,10 @@ h2 {
 .before-auth {
   display: none;
 }
+//
+// .btn {
+//   vertical-align: middle;
+// }
 
 .change-password-alert {
   color: red;
@@ -38,6 +42,12 @@ h2 {
 .dropdown-menu {
   border: 4px $primary solid;
   padding: 2px;
+}
+
+.delete-btn,
+.edit-btn {
+  margin: 2px;
+  padding: 5px 10px;
 }
 
 .modal-body {
@@ -72,13 +82,14 @@ h2 {
 }
 
 .add-event-button,
+.attend-button,
 .sign-in-button {
   background-color: $primary;
   color: white;
   display: flex;
   font-weight: 700;
-  margin: 10px;
-  padding: 10px;
+  margin: 10px 0;
+  padding: 5px 10px;
 }
 
 .sign-in-btn,
