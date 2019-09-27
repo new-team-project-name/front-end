@@ -11,10 +11,12 @@ a {
 
 body {
   font-family: 'Roboto', sans-serif;
+  padding-bottom: 60px;
 }
 
 h1 {
   font-family: 'Cantora One', sans-serif;
+  font-size: 3.5rem;
   font-weight: 800;
 }
 
@@ -29,23 +31,23 @@ h2 {
 .before-auth {
   display: none;
 }
-//
-// .btn {
-//   vertical-align: middle;
-// }
 
 .change-password-alert {
   color: red;
-
 }
 
 .card {
-  margin: 2rem;
+  margin: 0 0 1rem 0;
 }
 
 .dropdown-menu {
   border: 4px $primary solid;
   padding: 2px;
+}
+
+.logo {
+  height: 5em;
+  margin: 0 0 1rem 0;
 }
 
 .delete-btn,
@@ -55,7 +57,12 @@ h2 {
 }
 
 .modal-body {
+  background-color: #fff;
   margin: 1px black solid;
+}
+
+.modal-content {
+  background-color: transparent;
 }
 
 .modal-header {
@@ -68,7 +75,7 @@ h2 {
 }
 
 .navbar {
-  min-height: 8vh;
+  min-height: 50px;
   padding: 4px 16px;
 }
 
@@ -109,5 +116,4 @@ h2 {
   background-color: $primary;
   color: $secondary;
   font-weight: bolder;
-
 }
