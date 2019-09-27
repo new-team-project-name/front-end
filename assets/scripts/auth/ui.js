@@ -61,6 +61,7 @@ const signOutSuccess = function (data) {
   $('#auth').css('display', 'none')
   $('#pre-auth').css('display', 'initial')
   $('.content').empty()
+  hangoutEvents.onInitialGetHangouts()
   // console.log('signOutSuccess ran')
 }
 
