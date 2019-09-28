@@ -47,8 +47,8 @@ const rsvpAlreadySent = function () {
 }
 
 const initialUpdateFeed = function (data) {
-  data = data.reverse()
-  const showHangoutsHTML = showHangouts({ hangouts: data.hangouts })
+  const editData = data.hangouts.reverse()
+  const showHangoutsHTML = showHangouts({ hangouts: editData })
   $('.temporary-hangout-holder').html(showHangoutsHTML)
 }
 
