@@ -65,8 +65,9 @@ const onAttend = (event) => {
 
 const onGetAttendance = (event) => {
   event.preventDefault()
-  $('.custom-popover').html(`<img src="./public/giphy.gif">`)
+  // $('.custom-popover').html(`<img src="./public/giphy.gif">`)
   const hangoutId = $(event.target).data('id')
+  store.currentHangoutId = hangoutId
   api.getAttendance(hangoutId)
     .then(ui.getAttendance)
     .catch(ui.getAttendanceFailure)
