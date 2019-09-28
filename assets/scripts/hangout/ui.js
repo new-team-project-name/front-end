@@ -19,6 +19,7 @@ const updateFeed = function (data) {
 const getAttendance = function (data) {
   const showAttendanceHTML = showAttendees({ attendees: data.attendances })
   // $('.custom-popover').html(showAttendanceHTML)
+  console.log('#' + store.currentHangoutId)
   $('#' + store.currentHangoutId).html(showAttendanceHTML)
   // $('[data-toggle="popover"]').popover({
   //   html: true,
