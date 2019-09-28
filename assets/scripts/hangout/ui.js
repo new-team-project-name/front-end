@@ -11,24 +11,24 @@ const updateFeed = function (data) {
       hangout.editable = true
     }
     return hangout
-  })
-
+  }).reverse()
   const showHangoutsHTML = showHangouts({ hangouts: editData })
   $('.temporary-hangout-holder').html(showHangoutsHTML)
 }
 
 const getAttendance = function (data) {
   const showAttendanceHTML = showAttendees({ attendees: data.attendances })
-  $('.custom-popover').html(showAttendanceHTML)
-  $('[data-toggle="popover"]').popover({
-    html: true,
-    content: function () {
-      return $('#popover-content').html()
-    }
-  })
-  $('.popover-dismiss').popover({
-    trigger: 'focus'
-  })
+  // $('.custom-popover').html(showAttendanceHTML)
+  $('#' + store.currentHangoutId).html(showAttendanceHTML)
+  // $('[data-toggle="popover"]').popover({
+  //   html: true,
+  //   content: function () {
+  //     return $('#popover-content').html()
+  //   }
+  // })
+  // $('.popover-dismiss').popover({
+  //   trigger: 'focus'
+  // })
 }
 
 const attendSuccess = function () {
@@ -47,7 +47,8 @@ const rsvpAlreadySent = function () {
 }
 
 const initialUpdateFeed = function (data) {
-  const showHangoutsHTML = showHangouts({ hangouts: data.hangouts })
+  const editData = data.hangouts.reverse()
+  const showHangoutsHTML = showHangouts({ hangouts: editData })
   $('.temporary-hangout-holder').html(showHangoutsHTML)
 }
 
