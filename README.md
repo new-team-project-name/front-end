@@ -51,8 +51,8 @@ Team gathered together to share idea concerning the theme of the hangouts page. 
 
 # Development Process and Problem Solving
 * Wireframes, the relationship model, and project goals were discussed and agreed upon as a team at the start of the project.
-* Roles and codebase ownership was agreed upon early in the process, along with how design conflicts would be handled.
-* Twice daily stand ups were held to review task assignments.
+* Roles and codebase ownership were agreed upon early in the process, along with how design conflicts would be handled.
+* Stand ups were held to review task assignments.
 * Each day started with a planning session and ended with a brief retro.
 * Pair programming was utilized to build the backend api using Express and MongoDB.
 * Pair programming was used to create the more complex logic on the front-end.
@@ -60,9 +60,10 @@ Team gathered together to share idea concerning the theme of the hangouts page. 
 * Merge conflicts and complex PRs were reviewed as a team.
 
 ### Difficulties Faced
-* Multiple people working on the same file at the same time.
+* Managing different developer standards.
 * Managing different stretch goals and priorities between developers.
-* A few merge conflicts.
+* Multiple people working on the same file at the same time.
+* Several merge conflicts.
 * Challenges with the logic for checking attendance (for attendees list).
 * Data formatting forced by Mongoose based on data type.
 * A local host server not cooperating with WSL.
@@ -70,15 +71,21 @@ Team gathered together to share idea concerning the theme of the hangouts page. 
 
 ## Goals for Future Versions and Unsolved Issues
 ### Goals
-* Sort by event date
-* Picture for each event
-* Confirmation required in order to delete an event
-* Comment capability
-* User profile pictures
-* List of individuals who have marked "not going"
-* Conversion of app into template that future cohorts can download, modify, and host with their own information
+* Sort by event date.
+* Picture for each event.
+* Confirmation required in order to delete an event.
+* Comment capability.
+* User profiles including a profile picture.
+* List of individuals who have marked "not going".
+* Conversion of app into template that future cohorts can download, modify, and host with their own information.
 
 ### Unsolved Issues
+* Time of event should be a required form field and displayed for all events.
+* Sing Up/ Sign In input form is not large enough to see full email address or the form field placeholders.
+* New event input is not realistic for entering actual descriptions.
+* Date format is not set for user's ease.
 * Popover window formatting and styling.
-* New event and registration menu styling.
-* Transitions and breakpoints on mobile
+* When attendees list is empty, the popover is an empty black oval.
+* Transitions and breakpoints on mobile.
+* The fixed "header" needs fine tuning.
+* RSVP button still present after RSVPing/ does not provide dual functionality with the ability to un-rsvp.
