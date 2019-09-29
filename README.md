@@ -50,15 +50,23 @@ Team gathered together to share idea concerning the theme of the hangouts page. 
 * As a signed in user, I would like to sign out.
 
 # Development Process and Problem Solving
-* Erin and Soren teamed up to build the backend api using Express and MongoDB.
-* Eric started setting up the client api.
+* Wireframes, the relationship model, and project goals were discussed and agreed upon as a team at the start of the project.
+* Roles and codebase ownership was agreed upon early in the process, along with how design conflicts would be handled.
 * Twice daily stand ups were held to review task assignments.
+* Each day started with a planning session and ended with a brief retro.
+* Pair programming was utilized to build the backend api using Express and MongoDB.
+* Pair programming was used to create the more complex logic on the front-end.
+* Less complex items were broken down into tickets, which were assigned during planning and as needed.
+* Merge conflicts and complex PRs were reviewed as a team.
 
 ### Difficulties Faced
 * Multiple people working on the same file at the same time.
+* Managing different stretch goals and priorities between developers.
 * A few merge conflicts.
 * Challenges with the logic for checking attendance (for attendees list).
-* A local host server not cooperating with wsl.
+* Data formatting forced by Mongoose based on data type.
+* A local host server not cooperating with WSL.
+* Logic to populate the correct buttons based on user authentication and resource ownership.
 
 ## Goals for Future Versions and Unsolved Issues
 ### Goals
@@ -68,6 +76,9 @@ Team gathered together to share idea concerning the theme of the hangouts page. 
 * Comment capability
 * User profile pictures
 * List of individuals who have marked "not going"
+* Conversion of app into template that future cohorts can download, modify, and host with their own information
 
 ### Unsolved Issues
 * Popover window formatting and styling.
+* New event and registration menu styling.
+* Transitions and breakpoints on mobile
