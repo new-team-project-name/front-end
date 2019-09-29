@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo+Black|Cantora+One|Roboto|Francois+One|Lemon&display=swap');
 
 $primary: #fa4542;
-$secondary: #ffffff;
+$secondary: #fff;
 
 a {
   color: $primary;
@@ -42,12 +42,13 @@ h2 {
 }
 
 .card {
-  border: 1px black solid;
+  background-color: transparent;
+  border: 2.25px black solid;
 }
 
 .card-header {
   background-color: $primary;
-  color: #fff;
+  color: $secondary;
   font-weight: 900;
 }
 
@@ -61,7 +62,7 @@ h2 {
 }
 
 .dropdown-menu {
-  border: 2.5px black solid;
+  border: 2px black solid;
   padding: 2px;
 }
 
@@ -78,11 +79,6 @@ h2 {
   float: right;
 }
 
-.delete-btn,
-.edit-btn {
-  margin: 2px 0 4px 0;
-  padding: 5px 10px;
-}
 
 .logo {
   height: 5em;
@@ -94,7 +90,7 @@ h2 {
 // }
 
 .modal-body {
-  background-color: #fff;
+  background-color: $secondary;
   margin: 1px black solid;
 }
 
@@ -120,7 +116,7 @@ h2 {
 
 .nav-btn {
   background-color: $primary;
-  color: #ffffff;
+  color: $secondary;
   display: flex;
   font-weight: 700;
   margin: 5px;
@@ -157,6 +153,12 @@ h2 {
   display: flex;
   font-weight: 700;
   margin: 10px 0;
+  padding: 5px 10px;
+}
+
+.delete-btn,
+.edit-btn {
+  margin: 2px 0 4px 0;
   padding: 5px 10px;
 }
 
