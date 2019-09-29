@@ -78,7 +78,7 @@ const addHangoutEventHandlers = function () {
   $('.temporary-hangout-holder').on('click', '.delete-button', onDeleteHangout)
   $('.temporary-hangout-holder').on('click', '.attend-button', onAttend)
   $('.temporary-hangout-holder').on('submit', '.edit-hangout', onUpdateHangout)
-  $('.temporary-hangout-holder').on('click', '.show-attend-button', onGetAttendance)
+  $('.temporary-hangout-holder').on('focus', '.show-attend-button', onGetAttendance)
 }
 
 module.exports = {
