@@ -28,6 +28,12 @@ h2 {
   display: initial;
 }
 
+.alert-container {
+  background-color: $secondary;
+  display: flex;
+  justify-content: center;
+}
+
 .attend-button {
   background-color: $primary;
   color: $secondary;
@@ -42,7 +48,6 @@ h2 {
 }
 
 .card {
-  background-color: transparent;
   border: 2.25px black solid;
 }
 
@@ -69,6 +74,7 @@ h2 {
 .event-container {
   display: flex;
   justify-content: center;
+  margin-top: 149px;
 }
 
 .event-button-left {
@@ -85,9 +91,12 @@ h2 {
   margin: 0 0 1rem 0;
 }
 
-// .logo-container {
-//   position: sticky;
-// }
+.logo-container {
+  background-color: $secondary;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
 
 .modal-body {
   background-color: $secondary;
@@ -133,17 +142,28 @@ h2 {
 }
 
 .sign-out-alert {
+  background-color: $secondary;
   color: #00cc66;
+  display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 5px;
+  justify-content: center;
+  margin: 0 auto;
   min-height: 3rem;
+  position: fixed;
   text-align: center;
+  top: 96px;
+  z-index: 1;
 }
 
 .sign-up-alert {
   color: red;
+}
+
+.temporary-hangout-holder {
+  margin-top: 5px;
+  padding-top: 10px;
 }
 
 .add-event-button,
