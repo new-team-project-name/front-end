@@ -14,6 +14,7 @@ const updateFeed = function (data) {
   }).reverse()
   const showHangoutsHTML = showHangouts({ hangouts: editData })
   $('.temporary-hangout-holder').html(showHangoutsHTML)
+  $('form').trigger('reset')
 }
 
 const getAttendance = function (data) {
